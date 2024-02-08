@@ -1,3 +1,5 @@
+package Aluno;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
