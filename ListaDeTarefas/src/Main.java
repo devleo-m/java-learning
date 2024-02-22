@@ -17,13 +17,13 @@ public class Main {
             int opcao = scanner.nextInt();
             switch (opcao){
                 case 1:
-                    System.out.println("add");
+                    GerenciadorTarefas.adicionarTarefa();
                     break;
                 case 2 :
-                    System.out.println("exibir");
+                    GerenciadorTarefas.exibirTarefa();
                     break;
                 case 3:
-                    System.out.println("remove");
+                    GerenciadorTarefas.removerTarefa();
                     break;
                 case 0:
                     System.out.println("Sair do programa");
