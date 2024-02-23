@@ -32,7 +32,10 @@ public class Main {
                     adicionarProfessor(prof);
                     break;
                 case 3:
-                    System.out.println("Remover professor");
+                    listarProfessor();
+                    System.out.println("Remover professor. Escolha o índice do professor:");
+                    int indiceRemover = scanner.nextInt();
+                    removerProfessor(indiceRemover);
                     break;
                 case 0:
                     System.out.println("Sair do programa");
@@ -52,5 +55,14 @@ public class Main {
     }
     public static void adicionarProfessor(Professor nome){
         professores.add(nome);
+    }
+
+    public static void removerProfessor(int indice) {
+        if (indice >= 0 && indice < professores.size()) {
+            Professor professorRemovido = professores.remove(indice);
+            System.out.println("Professor removido: " + professorRemovido);
+        } else {
+            System.out.println("Índice inválido. Nenhum professor removido.");
+        }
     }
 }
