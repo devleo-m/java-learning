@@ -1,6 +1,6 @@
 public class Professor {
     private int id;
-    private static int contadorID = 1;
+    private static int contadorID = 0;
     private String nome;
     private String especialidade;
 
