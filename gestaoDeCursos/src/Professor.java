@@ -46,8 +46,4 @@ public class Professor {
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
     }
-
-    public static void decrementarContadorID() {
-        contadorID--;
-    }
 }

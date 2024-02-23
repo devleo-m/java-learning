@@ -61,8 +61,6 @@ public class Main {
         if (indice >= 0 && indice < professores.size()) {
             Professor professorRemovido = professores.remove(indice);
             System.out.println("Professor removido: " + professorRemovido);
-            // Decrementar o contador de ID
-            Professor.decrementarContadorID();
         } else {
             System.out.println("Índice inválido. Nenhum professor removido.");
         }
