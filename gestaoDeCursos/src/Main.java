@@ -1,28 +1,35 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+    public static ArrayList<Curso> cursos = new ArrayList<>();
+    public static ArrayList<Professor> professores = new ArrayList<>();
+
     public static void main(String[] args) {
-        ArrayList<Curso> cursos = new ArrayList<>();
-        ArrayList<Professor> professores = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         do{
-            System.out.println("    Escolha uma opção:    ");
-            System.out.println("-------------------------|");
+            System.out.println("|------------------------|");
             System.out.println("|1 - Listar professor    |");
             System.out.println("|2 - Adicionar professor |");
             System.out.println("|3 - Remover professor   |");
             System.out.println("|------------------------|");
             System.out.println("|0 - Sair                |");
             System.out.println("|------------------------|");
+            System.out.println("    Escolha uma opção:    ");
             int opcao = scanner.nextInt();
             switch (opcao){
                 case 1:
-                    System.out.println("listar o professor");
+                    System.out.println("listar os professores");
+                    listarProfessor();
                     break;
                 case 2:
-                    System.out.println("Adicionar professor");
+                    System.out.println("Digite o nome do professor para adicionar: ");
+                    String nome = scanner.next();
+                    nome += scanner.nextLine();
+                    System.out.println("Digite a especialidade do professor: ");
+                    String espec = scanner.next();
+                    Professor prof = new Professor(nome, espec);
+                    adicionarProfessor(prof);
                     break;
                 case 3:
                     System.out.println("Remover professor");
@@ -34,9 +41,16 @@ public class Main {
         }while (true);
     }
 
-    public void listarProfessor(){
-        for (int i = 0; i < Curso.getProfessores; i++) {
-
+    public static void listarProfessor() {
+        if (professores.isEmpty()){
+            System.out.println("Nao tem professor cadastrado");
+        }else {
+            for (int i = 0; i < professores.size(); i++) {
+                System.out.println(i+": "+professores.get(i));
+            }
         }
+    }
+    public static void adicionarProfessor(Professor nome){
+        professores.add(nome);
     }
 }
