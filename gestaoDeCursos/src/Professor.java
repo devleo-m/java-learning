@@ -23,12 +23,12 @@ public class Professor {
         return id;
     }
 
-    public static int getContadorID() {
-        return contadorID;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public static void setContadorID(int contadorID) {
-        Professor.contadorID = contadorID;
+    public static int getContadorID() {
+        return contadorID;
     }
 
     public String getNome() {
@@ -45,5 +45,9 @@ public class Professor {
 
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
+    }
+
+    public static void decrementarContadorID() {
+        contadorID--;
     }
 }
