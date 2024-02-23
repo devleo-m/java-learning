@@ -5,14 +5,21 @@ public class Curso {
     private static int contadorID = 1;
     private String nome;
     private String descricao;
-    private  ArrayList<String> professores;
-    private int cargaHoraria;
+    private ArrayList<String> professores;
+    private byte cargaHoraria;
 
-    public Curso(String nome, String descricao, ArrayList<String> professores, int cargaHoraria) {
+    public Curso(String nome, String descricao, ArrayList<String> professores, byte cargaHoraria) {
         this.id = ++contadorID;
         this.nome = nome;
         this.descricao = descricao;
         this.professores = professores;
+        this.cargaHoraria = cargaHoraria;
+    }
+
+    public Curso(String nome, String descricao, byte cargaHoraria) {
+        this.id = ++contadorID;
+        this.nome = nome;
+        this.descricao = descricao;
         this.cargaHoraria = cargaHoraria;
     }
 
@@ -47,10 +54,6 @@ public class Curso {
         this.descricao = descricao;
     }
 
-    public ArrayList<String> getProfessores() {
-        return professores;
-    }
-
     public void setProfessores(ArrayList<String> professores) {
         this.professores = professores;
     }
@@ -59,7 +62,7 @@ public class Curso {
         return cargaHoraria;
     }
 
-    public void setCargaHoraria(int cargaHoraria) {
+    public void setCargaHoraria(byte cargaHoraria) {
         this.cargaHoraria = cargaHoraria;
     }
 }
