@@ -1,14 +1,12 @@
-import java.util.ArrayList;
-
 public class Curso {
     private int id;
     private static int contadorID = 1;
     private String nome;
     private String descricao;
-    private ArrayList<String> professores;
+    private Professor professores;
     private byte cargaHoraria;
 
-    public Curso(String nome, String descricao, ArrayList<String> professores, byte cargaHoraria) {
+    public Curso(String nome, String descricao, Professor professores, byte cargaHoraria) {
         this.id = ++contadorID;
         this.nome = nome;
         this.descricao = descricao;
@@ -54,7 +52,7 @@ public class Curso {
         this.descricao = descricao;
     }
 
-    public void setProfessores(ArrayList<String> professores) {
+    public void setProfessores(Professor professores) {
         this.professores = professores;
     }
 

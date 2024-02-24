@@ -44,6 +44,9 @@ public class Main {
                             case 3:
                                 removerCurso();
                                 break;
+                            case 4:
+                                addProfessorCurso();
+                                break;
                             case 0:
                                 System.out.println("Sair do adm cursos");
                                 loopC = false;
@@ -142,6 +145,27 @@ public class Main {
             cursos.remove(indiceCursos);
         }else {
             System.out.println("Indice invalido!");
+        }
+    }
+
+    public static void addProfessorCurso() {
+        Scanner scanner = new Scanner(System.in);
+        listarProfessor();
+        System.out.println("Digite o índice do professor para adicioná-lo ao curso");
+        int indiceProfessorAdd = scanner.nextInt();
+        if (indiceProfessorAdd >= 0 && indiceProfessorAdd < professores.size()) {
+            listarCurso();
+            System.out.println("Digite o índice do curso que deseja adicionar o professor");
+            int indiceCurso = scanner.nextInt();
+            if (indiceCurso >= 0 && indiceCurso < cursos.size()) {
+                Professor professorParaAdicionar = professores.get(indiceProfessorAdd);
+                cursos.get(indiceCurso).setProfessores(professorParaAdicionar);
+                System.out.println("Professor adicionado com sucesso!");
+            } else {
+                System.out.println("Índice de curso inválido!");
+            }
+        } else {
+            System.out.println("Índice de professor inválido!");
         }
     }
 
