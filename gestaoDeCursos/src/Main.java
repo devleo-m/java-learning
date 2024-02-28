@@ -24,15 +24,16 @@ public class Main {
                 case "c":
                     boolean loopC = true;
                     while (loopC) {
-                        System.out.println("|--------------------------|");
-                        System.out.println("|1 - Listar Cursos         |");
-                        System.out.println("|2 - Adicionar Curso       |");
-                        System.out.println("|3 - Remover Curso         |");
-                        System.out.println("|4 - Adc professor ao Curso|");
-                        System.out.println("|--------------------------|");
-                        System.out.println("|0 - Sair                  |");
-                        System.out.println("|--------------------------|");
-                        System.out.println("    Escolha uma opção:      ");
+                        System.out.println("|------------------------------|");
+                        System.out.println("|1 - Listar Cursos             |");
+                        System.out.println("|2 - Adicionar Curso           |");
+                        System.out.println("|3 - Remover Curso             |");
+                        System.out.println("|4 - Adc professor ao Curso    |");
+                        System.out.println("|5 - Remover professor do Curso|");
+                        System.out.println("|------------------------------|");
+                        System.out.println("|0 - Sair                      |");
+                        System.out.println("|------------------------------|");
+                        System.out.println("    Escolha uma opção:          ");
                         int opcaoC = scanner.nextInt();
                         switch (opcaoC) {
                             case 1:
@@ -47,6 +48,8 @@ public class Main {
                             case 4:
                                 addProfessorCurso();
                                 break;
+                            case 5:
+                                removerProfessorCurso();
                             case 0:
                                 System.out.println("Sair do adm cursos");
                                 loopC = false;
@@ -167,6 +170,10 @@ public class Main {
         } else {
             System.out.println("Índice de professor inválido!");
         }
+    }
+
+    public static void removerProfessorCurso(){
+
     }
 
     //--------------------------------------------------------------------//
